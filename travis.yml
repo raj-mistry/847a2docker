@@ -1,0 +1,25 @@
+sudo: required
+language: python
+services:
+  - docker
+
+script:
+  - docker image build -t raj-mistry/847-helloworld .
+
+after_success:
+  #log in to docker CLI
+  - echo "bb1f4197-b1ab-4a19-93cf-beb5f8202d1d" | docker login -u raj225 --password-stdin
+  #take built images and push to DOcker hub
+  - docker push raj225/847-helloworld
+  #test
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-1"
+  app: "dtest"
+  env: "Dtest-env"
+  bucket_name: "elasticbeanstalk-us-east-1"
+  on:
+    branch: master
+  access_key_id: AKIAXS2KDJSXL4RFEOSK
+  secret_access_key: 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
