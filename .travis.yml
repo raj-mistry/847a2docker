@@ -8,7 +8,7 @@ script:
 
 after_success:
   #log in to docker CLI
-  - echo "bb1f4197-b1ab-4a19-93cf-beb5f8202d1d" | docker login -u raj225 --password-stdin
+  - echo "PASSWORD" | docker login -u raj225 --password-stdin
   #take built images and push to DOcker hub
   - docker push raj225/847-helloworld
   #test
@@ -21,5 +21,5 @@ deploy:
   bucket_name: "elasticbeanstalk-ca-central-1-521457061038"
   on:
     all_braches: true
-  access_key_id: AKIAXS2KDJSXL4RFEOSK
-  secret_access_key: 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
+  access_key_id: "AWSID"
+  secret_access_key: "AWSACCESS"
