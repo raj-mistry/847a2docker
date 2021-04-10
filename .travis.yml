@@ -15,10 +15,10 @@ after_success:
 
 deploy:
   provider: elasticbeanstalk
-  region: "us-east-1"
+  region: "ca-central-1"
   app: "dtest"
-  env: "Dtest-env"
-  bucket_name: "elasticbeanstalk-us-east-1"
+  env: "Dtest-env-1"
+  bucket_name: "elasticbeanstalk-ca-central-1-521457061038"
   on:
     branch: master
   access_key_id: AKIAXS2KDJSXL4RFEOSK
